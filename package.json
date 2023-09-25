@@ -1,0 +1,25 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "watch": "tsc --watch",
+    "start": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/inquirer": "^9.0.3",
+    "dotenv": "^16.3.1",
+    "inquirer": "^9.2.11",
+    "langchain": "^0.0.151",
+    "vite": "^4.4.9"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "tailwindcss": "^3.3.3"
+  }
+}
