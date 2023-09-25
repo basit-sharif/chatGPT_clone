@@ -27,7 +27,7 @@
    tsc --init
    ```
 
-5. Update `tsconfig.json` by changing properties as follows
+5. Update `tsconfig.json` by changing properties as follows    //optional
 
    ```json
    {
@@ -56,47 +56,36 @@
    7. Create new secret key
    8. Save your generated key
 
-8. Create `.env` file
-
-   ```env
-   OPENAI_API_KEY="<OPEN_KEYS_PASTE_HERE>"
-   ```
-
-9. Create `.gitignore` file
-
-   ```gitignore
-   node_modules
-   .env
-   ```
-
-10. Create `app.ts` file
+8. Create `app.ts` file
 
     ```ts
     import { OpenAI } from "langchain/llms/openai";
-    import "dotenv/config";
     const llm = new OpenAI({
-      openAIApiKey: process.env.OPENAI_API_KEY,
+      openAIApiKey: "<OPEN_KEYS_PASTE_HERE>",    // past your open ai secret key here or you can store in env
       temperature: 0.9,
     });
-    async function main() {
-      const result = await llm.predict(
-        `What would be a good company name for a company that makes colorful socks?`
-      );
+    async function main(question) {
+      const result = await llm.predict(question);
       console.log(result);
+      return result
     }
-    main();
+    main();     //call this function on clicking button pass it value of input field that user entered question and show its reponse on ui using innertext or appenchild
     ```
+9. Vite For Server
 
-11. Transforms TypeScript code into JavaScript code
+   ```
+      npm i vite
+   ```
 
-    ```cmd
-    tsc
-    ```
+   make its script in package.json file then 
+   ```
+      "start":"vite"
+   ```
+   run you server like this
+   ```
+      npm start
+   ```
 
-12. Run the app
-
-    ```cmd
-    node app.js
-    ```
+10. Install tailwind css using guide [Tailwind css](https://tailwindcss.com/docs/installation)
 
 ---
